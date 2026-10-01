@@ -25,7 +25,7 @@ function getText(message) {
 async function sendText(to, body) {
   const version = process.env.WHATSAPP_API_VERSION || "v23.0";
   const phoneId = process.env.WHATSAPP_PHONE_NUMBER_ID;
-  const token = process.env.WHATSAPP_ACCESS_TOKEN;
+  const token = process.env.WHATSAPP_ACCESS_TOKEN || process.env.META_ACCESS_TOKEN;
 
   if (!phoneId || !token) {
     console.log("[DEMO] Mensagem para", to, ":", body);
